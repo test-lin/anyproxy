@@ -1,0 +1,88 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "6c17bed1382f242e5c411ccffb0ec7a7",
+    "content-hash": "909cfdf79083bd5e89c3af9476224c8e",
+    "packages": [
+        {
+            "name": "test-lin/db",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/test-lin/db.git",
+                "reference": "1222acb3764fab67a1050fa21e03cd63b77347ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/test-lin/db/1222acb3764fab67a1050fa21e03cd63b77347ca.zip",
+                "reference": "1222acb3764fab67a1050fa21e03cd63b77347ca",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Testlin\\Db\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "jani",
+                    "email": "505932384@qq.com"
+                }
+            ],
+            "description": "database",
+            "time": "2018-02-21 07:28:49"
+        },
+        {
+            "name": "test-lin/queue",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/test-lin/queue.git",
+                "reference": "fd4e478fcff2d083214cb2f06fb08943534d89fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/test-lin/queue/fd4e478fcff2d083214cb2f06fb08943534d89fb.zip",
+                "reference": "fd4e478fcff2d083214cb2f06fb08943534d89fb",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Testlin\\Queue\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "jani",
+                    "email": "505932384@qq.com"
+                }
+            ],
+            "description": "queue",
+            "time": "2018-02-21 07:41:46"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "test-lin/db": 20,
+        "test-lin/queue": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

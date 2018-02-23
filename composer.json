@@ -1,0 +1,15 @@
+{
+    "name": "test-lin/anyproxy",
+    "type": "project",
+    "require": {
+        "test-lin/db": "dev-master",
+        "test-lin/queue": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jani",
+            "email": "505932384@qq.com"
+        }
+    ]
+}
