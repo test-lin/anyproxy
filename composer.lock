@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6c17bed1382f242e5c411ccffb0ec7a7",
     "content-hash": "909cfdf79083bd5e89c3af9476224c8e",
     "packages": [
         {
@@ -13,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/test-lin/db.git",
-                "reference": "1222acb3764fab67a1050fa21e03cd63b77347ca"
+                "reference": "329b4cd5de2a0fc7c1896963484efdcb97df64f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/test-lin/db/1222acb3764fab67a1050fa21e03cd63b77347ca.zip",
-                "reference": "1222acb3764fab67a1050fa21e03cd63b77347ca",
+                "url": "https://files.phpcomposer.com/files/test-lin/db/329b4cd5de2a0fc7c1896963484efdcb97df64f9.zip",
+                "reference": "329b4cd5de2a0fc7c1896963484efdcb97df64f9",
                 "shasum": ""
             },
             "type": "library",
@@ -38,7 +37,7 @@
                 }
             ],
             "description": "database",
-            "time": "2018-02-21 07:28:49"
+            "time": "2018-02-23T15:30:02+00:00"
         },
         {
             "name": "test-lin/queue",
@@ -71,7 +70,7 @@
                 }
             ],
             "description": "queue",
-            "time": "2018-02-21 07:41:46"
+            "time": "2018-02-21T07:41:46+00:00"
         }
     ],
     "packages-dev": [],

@@ -1,10 +1,12 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../data/config.php';
 
 use Testlin\Db\Db;
 
-$db = new Db('mysqli', ['username' => 'root', 'password' => 'lin', 'dbname' => 'anyproxy']);
+$db_type = $config['db_type'];
+$db = new Db($db_type, $config[$db_type]);
 
 //getWxHis.php 当前页面为公众号历史消息时，读取这个程序
 //在采集队列表中有一个load字段，当值等于1时代表正在被读取
@@ -30,7 +32,4 @@ if (empty($tmplist)) {
     //将load字段update为1
     $db->update('tmplist', ["`load`='1'"], "id='{$tmplist['id']}'");
 }
-$echo = "<script>setTimeout(function(){window.location.href='" . $url . "';},2000);</script>"; //将下一个将要跳转的$url变成js脚本，由anyproxy注入到微信页面中。
-file_put_contents('getWxHis.log', "{$echo}\n", FILE_APPEND | LOCK_EX);
-
-echo $echo;
+echo "setTimeout(function(){window.location.href='" . $url . "';},2000);"; //将下一个将要跳转的$url变成js脚本，由anyproxy注入到微信页面中。

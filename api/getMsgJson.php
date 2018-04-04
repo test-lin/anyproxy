@@ -1,10 +1,12 @@
 <?php
 // 接收历史消息的json并解析后存入数据库
 require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../data/config.php';
 
 use Testlin\Db\Db;
 
-$db = new Db('mysqli', ['username' => 'root', 'password' => 'lin', 'dbname' => 'anyproxy']);
+$db_type = $config['db_type'];
+$db = new Db($db_type, $config[$db_type]);
 
 $str = trim($_POST['str']);
 $url = $_POST['url'];

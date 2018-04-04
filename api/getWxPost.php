@@ -1,10 +1,12 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../data/config.php';
 
 use Testlin\Db\Db;
 
-$db = new Db('mysqli', ['username' => 'root', 'password' => 'lin', 'dbname' => 'anyproxy']);
+$db_type = $config['db_type'];
+$db = new Db($db_type, $config[$db_type]);
 
 //getWxPost.php 当前页面为公众号文章页面时，读取这个程序
 //首先删除采集队列表中load=1的行
@@ -30,4 +32,4 @@ if (!empty($tmplist) && count($tmplist) > 1) {
     //更新刚才提到的公众号表中的采集时间time字段为当前时间戳。
     $db->update('weixin', ['collect' => time()], "id='{$info['id']}'");
 }
-echo "<script>setTimeout(function(){window.location.href='" . $url . "';},2000);</script>"; //将下一个将要跳转的$url变成js脚本，由anyproxy注入到微信页面中。
+echo "setTimeout(function(){window.location.href='" . $url . "';},2000);"; //将下一个将要跳转的$url变成js脚本，由anyproxy注入到微信页面中。

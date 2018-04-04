@@ -1,10 +1,12 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../data/config.php';
 
 use Testlin\Db\Db;
 
-$db = new Db('mysqli', ['username' => 'root', 'password' => 'lin', 'dbname' => 'anyproxy']);
+$db_type = $config['db_type'];
+$db = new Db($db_type, $config[$db_type]);
 
 // 获取文章阅读量和点赞量的程序
 
