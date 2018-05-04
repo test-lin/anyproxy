@@ -12,13 +12,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/test-lin/db.git",
-                "reference": "329b4cd5de2a0fc7c1896963484efdcb97df64f9"
+                "reference": "1b966de0bba16a86d857fb71192a2a9b7c4d2552"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/test-lin/db/329b4cd5de2a0fc7c1896963484efdcb97df64f9.zip",
-                "reference": "329b4cd5de2a0fc7c1896963484efdcb97df64f9",
+                "url": "https://files.phpcomposer.com/files/test-lin/db/1b966de0bba16a86d857fb71192a2a9b7c4d2552.zip",
+                "reference": "1b966de0bba16a86d857fb71192a2a9b7c4d2552",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
             },
             "type": "library",
             "autoload": {
@@ -37,7 +40,7 @@
                 }
             ],
             "description": "database",
-            "time": "2018-02-23T15:30:02+00:00"
+            "time": "2018-04-15T12:26:06+00:00"
         },
         {
             "name": "test-lin/queue",
