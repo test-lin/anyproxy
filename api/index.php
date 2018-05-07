@@ -159,7 +159,7 @@ class Tool
     }
 
     // 检查文章是否抓取过。没有就添加到抓取队列中
-    public function checkArticle($content_url)
+    protected function checkArticle($content_url)
     {
         $content_url = $this->url_decode($content_url);
 
