@@ -1,6 +1,9 @@
 module.exports = {
   *beforeSendResponse(requestDetail, responseDetail) {
-    var newResponse = responseDetail.response;
+    var newResponse = responseDetail.response,
+      xpath = require('xpath'),
+      dom = require('xmldom').DOMParser,
+      http = require('http');
 
     if (newResponse.body.toString() == "") {
       return null;
@@ -39,9 +42,6 @@ module.exports = {
         var nickname = /var nickname = \"(.*?)\"/.exec(newResponse.body.toString());
         var biz = /var __biz = \"(.*?)\";/.exec(newResponse.body.toString());
 
-        var xpath = require('xpath'),
-          dom = require('xmldom').DOMParser;
-
         var doc = new dom().parseFromString(newResponse.body.toString());
         var nodes = xpath.select('//img[@id="icon"]/@src', doc);
 
@@ -53,6 +53,13 @@ module.exports = {
         };
 
         HttpPost(data, "/index.php?op=getMsgJson");//这个函数是后文定义的，将匹配到的历史消息json发送到自己的服务器
+
+        http.get('http://192.168.100.107/index.php?op=getWxHis', function (res){
+          res.on('data', function (chunk) {
+            newResponse.body = newResponse.body.toString().replace(/(.*)(<script.*?>)(.*)/,'$1$2'+chunk+'$3');
+            return {response: newResponse};
+          });
+        });
       }catch(e){
         console.log(e);//错误捕捉
       }
@@ -80,7 +87,7 @@ function HttpPost(data, path) {//将json发送到服务器，str为json内容，
   content = require('querystring').stringify(data);
   var options = {
     method: "POST",
-    host: "www.test.me",//注意没有http://，这是服务器的域名。
+    host: "192.168.100.107",//注意没有http://，这是服务器的域名。
     port: 80,
     path: path,//接收程序的路径和文件名
     headers: {
