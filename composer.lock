@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+    "hash": "6c17bed1382f242e5c411ccffb0ec7a7",
     "content-hash": "909cfdf79083bd5e89c3af9476224c8e",
     "packages": [
         {
@@ -40,7 +41,7 @@
                 }
             ],
             "description": "database",
-            "time": "2018-04-15T12:26:06+00:00"
+            "time": "2018-04-15 12:26:06"
         },
         {
             "name": "test-lin/queue",
@@ -73,7 +74,7 @@
                 }
             ],
             "description": "queue",
-            "time": "2018-02-21T07:41:46+00:00"
+            "time": "2018-02-21 07:41:46"
         }
     ],
     "packages-dev": [],

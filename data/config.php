@@ -10,10 +10,10 @@ $config = [
         'dbname' => 'anyproxy'
     ],
     'pdo' => [
-        'host' => '192.168.33.1',
+        'host' => '192.168.1.1',
         'prot' => 3306,
-        'username' => 'deng',
-        'password' => 'deng123',
+        'username' => 'root',
+        'password' => 'lin',
         'dbname' => 'anyproxy'
     ]
 ];
