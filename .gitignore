@@ -1,2 +1,5 @@
 /vendor
+/data/config.php
 /node_modules
+.idea
+.vscode
