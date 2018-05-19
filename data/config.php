@@ -1,16 +1,16 @@
 <?php
 
 $config = [
-    'db_type' => 'pdo',
+    'db_type' => 'mysqli',
     'mysqli' => [
         'host' => '127.0.0.1',
         'prot' => 3306,
-        'username' => 'root',
-        'password' => 'root',
+        'username' => 'deng',
+        'password' => 'deng123',
         'dbname' => 'anyproxy'
     ],
     'pdo' => [
-        'host' => '192.168.1.1',
+        'host' => '127.0.0.1',
         'prot' => 3306,
         'username' => 'root',
         'password' => 'lin',
