@@ -11,7 +11,7 @@ module.exports = {
           var reg = /msgList = (.*?);/;//定义历史消息正则匹配规则
           var ret = reg.exec(newResponse.body.toString());//转换变量为string
           HttpPost(ret[1],requestDetail.url,"/getMsgJson.php");//这个函数是后文定义的，将匹配到的历史消息json发送到自己的服务器
-          http.get('http://www.anyproxy.me/getWxHis.php', function(res) {//这个地址是自己服务器上的一个程序，目的是为了获取到下一个链接地址，将地址放在一个js脚本中，将页面自动跳转到下一页。后文将介绍getWxHis.php的原理。
+          http.get('http://localhost/getWxHis.php', function(res) {//这个地址是自己服务器上的一个程序，目的是为了获取到下一个链接地址，将地址放在一个js脚本中，将页面自动跳转到下一页。后文将介绍getWxHis.php的原理。
             res.on('data', function(chunk){
               newResponse.body = newResponse.body.toString().replace(/(.*)(<script.*?>)(.*)/,'$1$2'+chunk+'$3');
               return {response: newResponse};
@@ -35,7 +35,7 @@ module.exports = {
           var reg = /var msgList = \'(.*?)\';/;//定义历史消息正则匹配规则（和第一种页面形式的正则不同）
           var ret = reg.exec(newResponse.body.toString());//转换变量为string
           HttpPost(ret[1],requestDetail.url,"/getMsgJson.php");//这个函数是后文定义的，将匹配到的历史消息json发送到自己的服务器
-          http.get('http://www.anyproxy.me/getWxHis.php', function(res) {//这个地址是自己服务器上的一个程序，目的是为了获取到下一个链接地址，将地址放在一个js脚本中，将页面自动跳转到下一页。后文将介绍getWxHis.php的原理。
+          http.get('http://localhost/getWxHis.php', function(res) {//这个地址是自己服务器上的一个程序，目的是为了获取到下一个链接地址，将地址放在一个js脚本中，将页面自动跳转到下一页。后文将介绍getWxHis.php的原理。
             res.on('data', function(chunk){
               newResponse.body = newResponse.body.toString().replace(/(.*)(<script.*?>)(.*)/,'$1$2'+chunk+'$3');
               return {response: newResponse};
@@ -67,7 +67,7 @@ module.exports = {
     }else if(/s\?__biz/i.test(requestDetail.url) || /mp\/rumor/i.test(requestDetail.url)){//当链接地址为公众号文章时（rumor这个地址是公众号文章被辟谣了）
       if(newResponse.body.toString() !== ""){
         try {
-          http.get('http://www.anyproxy.me/getWxPost.php', function(res) {//这个地址是自己服务器上的另一个程序，目的是为了获取到下一个链接地址，将地址放在一个js脚本中，将页面自动跳转到下一页。后文将介绍getWxPost.php的原理。
+          http.get('http://localhost/getWxPost.php', function(res) {//这个地址是自己服务器上的另一个程序，目的是为了获取到下一个链接地址，将地址放在一个js脚本中，将页面自动跳转到下一页。后文将介绍getWxPost.php的原理。
             res.on('data', function(chunk){
               newResponse.body = newResponse.body.toString().replace(/(.*)(<script.*?>)(.*)/,'$1$2'+chunk+'$3');
               return {response: newResponse};
@@ -90,7 +90,7 @@ function HttpPost(str,url,path) {//将json发送到服务器，str为json内容�
   content = require('querystring').stringify(data);
   var options = {
     method: "POST",
-    host: "www.anyproxy.me",//注意没有http://，这是服务器的域名。
+    host: "localhost",//注意没有http://，这是服务器的域名。
     port: 80,
     path: path,//接收程序的路径和文件名
     headers: {

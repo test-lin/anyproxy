@@ -2,8 +2,7 @@
     "name": "test-lin/anyproxy",
     "type": "project",
     "require": {
-        "test-lin/db": "dev-master",
-        "test-lin/queue": "dev-master"
+        "test-lin/db": "dev-master"
     },
     "license": "MIT",
     "authors": [

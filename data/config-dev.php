@@ -7,13 +7,13 @@ $config = [
         'prot' => 3306,
         'username' => 'root',
         'password' => 'root',
-        'dbname' => 'anyproxy'
+        'dbname' => 'test'
     ],
     'pdo' => [
         'host' => '',
         'prot' => 3306,
-        'username' => 'deng',
-        'password' => 'deng123',
-        'dbname' => 'anyproxy'
+        'username' => 'root',
+        'password' => 'root',
+        'dbname' => 'test'
     ]
 ];
